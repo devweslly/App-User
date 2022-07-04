@@ -24,5 +24,21 @@
             app:destination="@id/listFragment"
             app:popUpTo="@id/listFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_infoFragment_to_infoProdFragment"
+            app:destination="@id/infoProdFragment"
+            app:popUpTo="@id/infoProdFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoProdFragment"
+        android:name="com.example.appuser.InfoProdFragment"
+        android:label="fragment_info_prod"
+        tools:layout="@layout/fragment_info_prod" >
+        <action
+            android:id="@+id/action_infoProdFragment_to_infoFragment"
+            app:destination="@id/infoFragment"
+            app:popUpTo="@id/infoFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

@@ -22,7 +22,7 @@ class InfoFragment : Fragment() {
         // Ação de click para o CardInfoProd do CardView1
         binding.CardInfoProdInfFragment.setOnClickListener {
             //Achando o Nav Controller e navegando para o próximo Fragment
-            findNavController().navigate(R.id.action_infoFragment_to_listFragment)
+            findNavController().navigate(R.id.action_infoFragment_to_infoProdFragment)
         }
 
         return binding.root
