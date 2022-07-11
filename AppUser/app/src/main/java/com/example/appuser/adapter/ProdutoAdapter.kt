@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appuser.databinding.CardLayoutBinding
 import com.example.appuser.model.Produto
 
-class ProdutoAdapter : RecyclerView.Adapter<ProdutoAdapter.ProdutoViewHolder>() {
+class ProdutoAdapter() : RecyclerView.Adapter<ProdutoAdapter.ProdutoViewHolder>() {
 
     private var listProduto = emptyList<Produto>()
+    var onItemClick : ((Produto) -> Unit)? = null
 
     class ProdutoViewHolder(val binding: CardLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {}
@@ -29,6 +30,11 @@ class ProdutoAdapter : RecyclerView.Adapter<ProdutoAdapter.ProdutoViewHolder>() 
         holder.binding.tituloProdutoCardView.text = produto.titulo
         holder.binding.descricaoProdutoCardView.text = produto.descricao
         holder.binding.enderecoProdutoCardView.text = produto.endereco
+
+        // Ação de clique no item do RecyclerView
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(produto)
+        }
 
     }
 

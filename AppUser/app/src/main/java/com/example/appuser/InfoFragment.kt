@@ -64,13 +64,11 @@ class InfoFragment : Fragment() {
 
         adapter.setList(listProduto)
 
-        /*
-        // Ação de click para o CardInfoProd do CardView1
-        binding.CardInfoProdInfFragment.setOnClickListener {
-            //Achando o Nav Controller e navegando para o próximo Fragment
+        // onItemClick
+        adapter.onItemClick = {
+            //Achando o Nav Controller e navegando de infoFragment para infoProdFragment
             findNavController().navigate(R.id.action_infoFragment_to_infoProdFragment)
         }
-        */
 
         return binding.root
     }
